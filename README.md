@@ -72,8 +72,8 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-**[]Install posgreSQL Server**
-**[]Install DBMS**
+**- Install posgreSQL Server**
+**- Install DBMS**
 
 ### Setup
 
@@ -113,7 +113,7 @@ git clone https://github.com/Theodoraldo/vet-clinic-db.git
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/Theodoraldo/vet-clinic-db/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
