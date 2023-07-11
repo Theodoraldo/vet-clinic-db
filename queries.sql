@@ -63,3 +63,21 @@ COMMIT TRANSACTION;
 
 SELECT * FROM animals;
 -- -----------------------------------------------------------------------------------------------------
+
+SELECT COUNT(*) FROM animals;
+
+SELECT COUNT(*) FROM animals WHERE escape_attempts = 0;
+
+SELECT AVG(weight_kg) FROM animals;
+
+SELECT name FROM animals WHERE escape_attempts = (SELECT MAX(escape_attempts) FROM animals);
+
+SELECT * FROM animals WHERE neutered;
+
+SELECT * FROM animals WHERE NOT neutered;
+
+SELECT MAX(weight_kg), species FROM animals GROUP BY species;
+
+SELECT MIN(weight_kg), species FROM animals GROUP BY species;
+
+SELECT AVG(escape_attempts), species FROM animals WHERE DATE_PART('YEAR',date_of_birth) BETWEEN 1990 AND 2000 GROUP BY species;
