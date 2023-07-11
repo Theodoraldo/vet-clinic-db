@@ -33,6 +33,8 @@ UPDATE animals SET species = 'digimon' WHERE name LIKE '%mon';
 
 UPDATE animals SET species = 'pokemon' WHERE species IS NULL;
 
+SELECT * FROM animals;
+
 COMMIT WORK;
 
 SELECT * FROM animals;
@@ -49,7 +51,7 @@ SELECT * FROM animals;
 
 BEGIN TRANSACTION;
 
-DELETE FROM animals WHERE date_of_birth >= '2022-01-01';
+DELETE FROM animals WHERE date_of_birth > '2022-01-01';
 
 SAVEPOINT vet_savepoint;
 
