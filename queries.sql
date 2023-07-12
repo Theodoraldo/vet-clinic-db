@@ -83,3 +83,19 @@ SELECT MAX(weight_kg), species FROM animals GROUP BY species;
 SELECT MIN(weight_kg), species FROM animals GROUP BY species;
 
 SELECT AVG(escape_attempts), species FROM animals WHERE DATE_PART('YEAR',date_of_birth) BETWEEN 1990 AND 2000 GROUP BY species;
+-- -----------------------------------------------------------------------------------------------------
+
+SELECT ani.name, own.full_name FROM animals ani INNER JOIN owners own ON ani.owner_id = own.id WHERE own.full_name IN ('Melody Pond');
+
+SELECT ani.name animal_name, sp.name type_name FROM animals ani INNER JOIN species sp ON ani.species_id = sp.id WHERE sp.name = 'Pokemon';
+
+SELECT ani.name animal_name, own.full_name owner_name FROM animals ani FULL JOIN owners own ON ani.owner_id = own.id;
+
+SELECT COUNT(*), sp.name FROM animals ani JOIN species sp ON ani.species_id = sp.id GROUP BY sp.name;
+
+SELECT ani.name animal_name, sp.name specie_name FROM animals ani JOIN species sp ON ani.species_id = sp.id INNER JOIN owners own ON ani.owner_id = own.id WHERE sp.name = 'Digimon' AND own.full_name = 'Jennifer Orwell';
+
+SELECT ani.name, ani.escape_attempts, own.full_name FROM animals ani JOIN owners own ON ani.owner_id = own.id WHERE own.full_name = 'Dean Winchester' AND ani.escape_attempts = 0;
+
+SELECT COUNT(*) , own.full_name FROM animals ani JOIN owners own ON ani.owner_id = own.id GROUP BY own.full_name;
+-- -----------------------------------------------------------------------------------------------------
