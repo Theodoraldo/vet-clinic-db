@@ -91,11 +91,11 @@ SELECT ani.name animal_name, sp.name type_name FROM animals ani INNER JOIN speci
 
 SELECT ani.name animal_name, own.full_name owner_name FROM animals ani FULL JOIN owners own ON ani.owner_id = own.id;
 
-SELECT COUNT(*) FROM animals GROUP BY species_id;
+SELECT COUNT(*), sp.name FROM animals ani JOIN species sp ON ani.species_id = sp.id GROUP BY sp.name;
 
 SELECT ani.name animal_name, sp.name specie_name FROM animals ani JOIN species sp ON ani.species_id = sp.id INNER JOIN owners own ON ani.owner_id = own.id WHERE sp.name = 'Digimon' AND own.full_name = 'Jennifer Orwell';
 
-SELECT * FROM animals WHERE owner_id = (SELECT id FROM owners WHERE full_name = 'Dean Winchester') AND escape_attempts = 0;
+SELECT ani.name, ani.escape_attempts, own.full_name FROM animals ani JOIN owners own ON ani.owner_id = own.id WHERE own.full_name = 'Dean Winchester' AND ani.escape_attempts = 0;
 
 SELECT COUNT(*) , own.full_name FROM animals ani JOIN owners own ON ani.owner_id = own.id GROUP BY own.full_name;
 -- -----------------------------------------------------------------------------------------------------
