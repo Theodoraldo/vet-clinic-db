@@ -30,4 +30,13 @@ INCREMENT 1 START 1 CACHE 1),
   name VARCHAR(100) NOT NULL,
   PRIMARY KEY (id)
 );
+
+ALTER TABLE animals 
+  DROP COLUMN species,
+  ADD COLUMN species_id INTEGER,
+  ADD CONSTRAINT animal_species_fk FOREIGN KEY (species_id) REFERENCES species (id);
+
+ALTER TABLE animals 
+  ADD COLUMN owner_id INTEGER,
+  ADD CONSTRAINT animal_owners_fk FOREIGN KEY (owner_id) REFERENCES owners (id);
 -- -----------------------------------------------------------------------------------------------------
