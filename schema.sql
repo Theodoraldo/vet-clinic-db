@@ -57,4 +57,11 @@ CREATE TABLE specializations (
     CONSTRAINT spe_spe_fk FOREIGN KEY (species_id) REFERENCES species(id)
 );
 
+CREATE TABLE visits (
+    vet_id INTEGER,
+    animal_id INTEGER,
+    visit_date DATE,
+    CONSTRAINT vet_vis_fk FOREIGN KEY (vet_id) REFERENCES vets(id),
+    CONSTRAINT ani_vis_fk FOREIGN KEY (animal_id) REFERENCES animals(id) 
+);
 -- -----------------------------------------------------------------------------------------------------
