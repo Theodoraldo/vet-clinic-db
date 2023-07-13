@@ -50,4 +50,11 @@ INCREMENT 1 START 1 CACHE 1),
   PRIMARY KEY (id)
 );
 
+CREATE TABLE specializations (
+    vet_id INTEGER,
+    species_id INTEGER, 
+    CONSTRAINT vet_spe_fk FOREIGN KEY (vet_id) REFERENCES vets(id),
+    CONSTRAINT spe_spe_fk FOREIGN KEY (species_id) REFERENCES species(id)
+);
+
 -- -----------------------------------------------------------------------------------------------------
